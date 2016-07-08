@@ -31,6 +31,25 @@ public class CodeEditor : MonoBehaviour {
         }
     }
 
+    void Awake()
+    {
+        if(instance == null)
+        {
+            instance = this;
+            DontDestroyOnLoad(this);
+        }
+        else
+        {
+            Destroy(this);
+        }
+    }
+
+    public static void ShowLevel(int level)
+    {
+        if (instance != null)
+            instance.Show(level);
+    }
+
 	public void Show(int level)
     {
         fade.SetActive(true);
