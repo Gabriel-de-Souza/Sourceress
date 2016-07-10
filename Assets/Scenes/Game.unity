@@ -151,6 +151,8 @@ GameObject:
   - 4: {fileID: 90087131}
   - 61: {fileID: 90087132}
   - 114: {fileID: 90087133}
+  - 114: {fileID: 90087134}
+  - 95: {fileID: 90087135}
   m_Layer: 12
   m_Name: Pillar
   m_TagString: Obstacle
@@ -200,6 +202,39 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   level: 0
+--- !u!114 &90087134
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 90087130}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 01b9f3604468b6a439954938b7cadd0f, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  animator:
+  - {fileID: 90087135}
+  - {fileID: 475124061}
+  light: {fileID: 675993633}
+  particleSystem: {fileID: 1843025207}
+--- !u!95 &90087135
+Animator:
+  serializedVersion: 3
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 90087130}
+  m_Enabled: 1
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 9100000, guid: 6b13198cf8144e143845c330e094b172, type: 2}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
 --- !u!1 &97077844
 GameObject:
   m_ObjectHideFlags: 0
@@ -251,7 +286,7 @@ MonoBehaviour:
     m_LineSpacing: 1
   m_Text: "<color=#b34e4e>var</color> pseudoCode = <color=#b34e4e>true</color>;\r\n<color=#b34e4e>var</color>
     sourceress = new Game();\r\n<color=#b34e4e>var</color> isEducational = <color=#b34e4e>true</color>;\r\n<color=#b34e4e>var</color>
-    you = <color=#b34e4e>new</color> Mage();\r\nsorceress.start();\r\n\n\r<color=#49723b>//Hi!
+    you = <color=#b34e4e>new</color> Mage();\r\nsourceress.start();\r\n\n\r<color=#49723b>//Hi!
     This is the Ancient Book of\n//Rules. This book controls how our\n//universe works.
     It was a gift from\n//God. Use it carefully.\n</color>"
 --- !u!222 &97077846
@@ -297,7 +332,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!224 &157463104
 RectTransform:
   m_ObjectHideFlags: 0
@@ -2454,8 +2489,8 @@ Canvas:
   m_Enabled: 1
   serializedVersion: 2
   m_RenderMode: 0
-  m_Camera: {fileID: 0}
-  m_PlaneDistance: 100
+  m_Camera: {fileID: 1954879683}
+  m_PlaneDistance: 1
   m_PixelPerfect: 0
   m_ReceivesEvents: 1
   m_OverrideSorting: 0
@@ -5205,6 +5240,11 @@ Transform:
 --- !u!1 &1954879675 stripped
 GameObject:
   m_PrefabParentObject: {fileID: 100000, guid: 64b12b15baf9644af9f0651e6705f0ef, type: 2}
+  m_PrefabInternal: {fileID: 1243540802}
+--- !u!20 &1954879683 stripped
+Camera:
+  m_PrefabParentObject: {fileID: 2000000, guid: 64b12b15baf9644af9f0651e6705f0ef,
+    type: 2}
   m_PrefabInternal: {fileID: 1243540802}
 --- !u!114 &1954879685
 MonoBehaviour:

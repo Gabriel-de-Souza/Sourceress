@@ -13,6 +13,19 @@ public class CodeEditorLevel : MonoBehaviour {
     protected string rightPageDefault;
 
     public string[] values;
+	[SerializeField]
+	public string[] Values
+	{
+		get
+		{
+			return values;
+		}
+		set
+		{
+			values = value;
+			CodeEditor.ValueChanged();
+		}
+	}
     protected string[] defaultValues;
     [SerializeField]
     protected string[] maxValues;

@@ -1,6 +1,8 @@
 ﻿using UnityEngine;
 using UnityEngine.UI;
 using System.Collections;
+using System.Collections.Generic;
+using System;
 
 public class CodeEditor : MonoBehaviour {
 
@@ -20,6 +22,19 @@ public class CodeEditor : MonoBehaviour {
 
     private CodeEditorLevel currentLevel = null;
 
+	public static List<Action<string[]>> OnValueChanged = new List<Action<string[]>>();
+
+	public static void ValueChanged(){
+		if (instance != null)
+		{
+			foreach (Action<string[]> ac in OnValueChanged)
+			{
+				if (ac != null)
+					ac(Values);
+			}
+		}
+	}
+
     public static string[] Values
     {
         get
@@ -27,7 +42,7 @@ public class CodeEditor : MonoBehaviour {
             if (instance == null)
                 return null;
             else
-                return instance.currentLevel.values;
+                return instance.currentLevel.Values;
         }
     }
 
@@ -55,7 +70,7 @@ public class CodeEditor : MonoBehaviour {
         fade.SetActive(true);
         closedBook.SetActive(true);
         openBook.gameObject.SetActive(false);
-        if (level > 0 && level < levels.Length)
+        if (level >= 0 && level < levels.Length)
             currentLevel = levels[level];
     }
 
